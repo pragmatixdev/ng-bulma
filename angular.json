@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "ng-bulma-lib": {
+      "root": "projects/ng-bulma-lib",
+      "sourceRoot": "projects/ng-bulma-lib/src",
+      "projectType": "library",
+      "prefix": "enl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-bulma-lib/tsconfig.lib.json",
+            "project": "projects/ng-bulma-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng-bulma-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-bulma-lib/src/test.ts",
+            "tsConfig": "projects/ng-bulma-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-bulma-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-bulma-lib/tsconfig.lib.json",
+              "projects/ng-bulma-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-bulma-lib-app"

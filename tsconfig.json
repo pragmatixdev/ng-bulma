@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-bulma-lib": [
+        "dist/ng-bulma-lib"
+      ],
+      "ng-bulma-lib/*": [
+        "dist/ng-bulma-lib/*"
+      ]
+    }
   }
 }

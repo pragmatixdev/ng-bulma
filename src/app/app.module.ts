@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
+import { HeaderComponent } from './header/header.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

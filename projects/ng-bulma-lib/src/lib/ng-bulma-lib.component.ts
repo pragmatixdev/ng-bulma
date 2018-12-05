@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'enl-ng-bulma-lib',
+  selector: 'bm-lib',
   template: `
-    <p>
-      ng-bulma-lib works!
-    </p>
+    <p>Bulma library has been loaded!</p>
   `,
   styles: []
 })

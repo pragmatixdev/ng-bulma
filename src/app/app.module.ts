@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
+import { SectionContainerComponent } from './section-container/section-container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SectionContainerComponent
   ],
   imports: [
     BrowserModule,

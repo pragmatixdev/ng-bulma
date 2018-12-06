@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SectionContainerComponent } from './section-container/section-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SectionContainerComponent
   ],
   imports: [
     BrowserModule,

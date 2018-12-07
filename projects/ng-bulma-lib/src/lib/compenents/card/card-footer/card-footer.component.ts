@@ -1,14 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'bm-card-footer',
-  templateUrl: './card-footer.component.html',
-  styles: []
+  templateUrl: './card-footer.component.html'
 })
-export class BmCardFooterComponent implements OnInit {
-  @Input() customClass: string;
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
+export class BmCardFooterComponent { }

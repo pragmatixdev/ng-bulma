@@ -1,12 +1,14 @@
-<div class="card">
+<div class="card {{isCollapsed ? 'is-closed' : 'is-opened'}}">
   <ng-content select="bm-card-header"></ng-content>
-  <ng-content select="bm-card-image"></ng-content>
-  <div class="card-content">
-    <div class="media">
-      <ng-content select="bm-media-image"></ng-content>
-      <ng-content select="bm-media-content"></ng-content>
+  <div class="card-wrapper" [@collapseCard]="isCollapsed ? 'closed' : 'open'">
+    <ng-content select="bm-card-image"></ng-content>
+    <div class="card-content">
+      <div class="media">
+        <ng-content select="bm-media-image"></ng-content>
+        <ng-content select="bm-media-content"></ng-content>
+      </div>
+      <ng-content select="bm-card-content"></ng-content>
     </div>
-    <ng-content select="bm-card-content"></ng-content>
+    <ng-content select="bm-card-footer"></ng-content>
   </div>
-  <ng-content select="bm-card-footer"></ng-content>
 </div>

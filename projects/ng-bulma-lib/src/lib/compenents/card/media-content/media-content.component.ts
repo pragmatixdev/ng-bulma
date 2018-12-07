@@ -1,14 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component } from '@angular/core';
 
 @Component({
   selector: 'bm-media-content',
-  templateUrl: './media-content.component.html',
-  styles: []
+  templateUrl: './media-content.component.html'
 })
-export class BmMediaContentComponent implements OnInit {
-  @Input() customClass: string;
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
+export class BmMediaContentComponent { }

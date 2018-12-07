@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'bm-lib',
@@ -7,11 +7,4 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class NgBulmaLibComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class NgBulmaLibComponent { }

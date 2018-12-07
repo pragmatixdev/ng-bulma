@@ -1,16 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'bm-card-image',
-  templateUrl: './card-image.component.html',
-  styles: []
+  templateUrl: './card-image.component.html'
 })
-export class BmCardImageComponent implements OnInit {
-  @Input() customClass: string;
+export class BmCardImageComponent {
   @Input() size: string;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

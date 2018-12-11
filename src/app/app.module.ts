@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
 import { SectionContainerComponent } from './section-container/section-container.component';
+import { InfopackComponent } from './infopack/infopack.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SectionContainerComponent
+    SectionContainerComponent,
+    InfopackComponent
   ],
   imports: [
     BrowserModule,

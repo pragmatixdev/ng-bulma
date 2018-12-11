@@ -1,0 +1,56 @@
+@import "../../styles";
+
+.cards {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 338px;
+
+  &-item {
+    @extend .is-flex, .has-text-centered;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1.875rem;
+    height: 33.33%;
+
+    &:first-child {
+      background-color: lighten($blue, 25%);
+    }
+
+    &:nth-child(2) {
+      background-color: lighten($blue, 16%);
+    }
+
+    &:nth-child(3) {
+      background-color: lighten($blue, 10%);
+    }
+
+    &:hover {
+      .button {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .image {
+        margin-top: 0;
+      }
+    }
+
+    .image {
+      margin-bottom: 1.875rem;
+      margin-top: 70px;
+      transition: margin 0.2s ease-in-out;
+    }
+
+    p {
+      margin-bottom: 1.75rem;
+    }
+
+    .button {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
 
 import { AppComponent } from './app.component';
+import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -12,6 +13,7 @@ import { SectionContainerComponent } from './section-container/section-container
 @NgModule({
   declarations: [
     AppComponent,
+    CardsComponent,
     FooterComponent,
     HeaderComponent,
     HeroComponent,
@@ -22,7 +24,6 @@ import { SectionContainerComponent } from './section-container/section-container
     BrowserModule,
     NgBulmaLibModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

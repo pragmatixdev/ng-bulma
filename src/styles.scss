@@ -14,16 +14,19 @@ $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
   .button {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     height: auto;
+
     &.is-medium {
       font-size: 1rem;
       padding-top: calc(0.8125rem - #{$button-border-width});
       padding-bottom: calc(0.8125rem - #{$button-border-width});
     }
+
     &.is-rounded {
       border-radius: $radius-rounded;
       padding-left: $button-padding-horizontal;
       padding-right: $button-padding-horizontal;
     }
+
     &.is-primary {
       &:hover, &.is-hovered {
         background-color: darken($primary, 10%);

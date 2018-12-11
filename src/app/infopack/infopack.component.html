@@ -1,12 +1,14 @@
-<app-section-container title="Get Our Infopack" subtitle="Best quick guide to start working with us." >
+<app-section-container title="Get Our Infopack" subtitle="Best quick guide to start working with us.">
   <div class="control has-button">
     <input
       class="input infopack-input"
-      [ngStyle]="{'padding-right': rightBtnWidth}"
+      [ngStyle]="{'padding-right': submitBtnWidth}"
       type="email"
       placeholder="Enter your Email">
     <span class="is-right">
-      <button class="button" #rightBtn>END ME THE KIT!</button>
+      <button class="button is-primary is-rounded has-text-weight-semibold is-uppercase" #rightBtn>
+        send me the kit!
+      </button>
     </span>
   </div>
 </app-section-container>

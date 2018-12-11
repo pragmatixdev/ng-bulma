@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
+import { PageContainerComponent } from './page-container/page-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SectionContainerComponent } from './section-container/section-container
     FooterComponent,
     HeaderComponent,
     HeroComponent,
-    SectionContainerComponent
+    PageContainerComponent,
+    SectionContainerComponent,
   ],
   imports: [
     BrowserModule,

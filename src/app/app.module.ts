@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
+import { BmTabModuleExport } from 'ng-bulma-lib';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { NgBulmaLibModule } from 'ng-bulma-lib';
   ],
   imports: [
     BrowserModule,
+    BmTabModuleExport,
     NgBulmaLibModule
   ],
   providers: [],

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { BmCardModule } from './compenents/card/bm-card.module';
-import { NgBulmaLibComponent } from './ng-bulma-lib.component';
+import { BmTabModule } from './compenents/tab/bm-tab.module';
 
 @NgModule({
   imports: [ ],
-  declarations: [ NgBulmaLibComponent ],
-  exports: [ BmCardModule, NgBulmaLibComponent ]
+  declarations: [ ],
+  exports: [ BmCardModule, BmTabModule ]
 })
 export class NgBulmaLibModule { }

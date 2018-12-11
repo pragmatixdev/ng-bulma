@@ -1,0 +1,8 @@
+<div class="tabs {{ modifierClass }}">
+  <ul>
+    <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.is-active]="tab.active">
+      <a href="#"><ng-content select="bm-tab-title">{{tab.title}}</ng-content></a>
+    </li>
+  </ul>
+</div>
+<ng-content></ng-content>

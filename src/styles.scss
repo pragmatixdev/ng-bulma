@@ -6,11 +6,19 @@ $link: $blue;
 $link-hover: $primary;
 $button-color: $primary;
 $button-padding-horizontal: 2.25rem;
+$button-border-width: 0.125rem;
 $radius-rounded: 3.125rem;
+$button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
 
 :host {
   .button {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    height: auto;
+    &.is-medium {
+      font-size: 1rem;
+      padding-top: calc(0.8125rem - #{$button-border-width});
+      padding-bottom: calc(0.8125rem - #{$button-border-width});
+    }
     &.is-rounded {
       border-radius: $radius-rounded;
       padding-left: $button-padding-horizontal;
@@ -27,3 +35,4 @@ $radius-rounded: 3.125rem;
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/base/helpers.sass";

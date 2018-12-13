@@ -1,7 +1,7 @@
 <div class="tabs {{ modifierClass }}">
   <ul>
-    <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.is-active]="tab.active">
-      <a href="#"><ng-content select="bm-tab-title">{{tab.title}}</ng-content></a>
+    <li *ngFor="let tab of tabs, let i = index" (click)="selectTab(tab)" [class.is-active]="tab.active">
+      <div [innerHtml]="titles[i]"></div>
     </li>
   </ul>
 </div>

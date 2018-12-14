@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { NgBulmaLibModule } from 'ng-bulma-lib';
 import { BmTabModuleExport } from 'ng-bulma-lib';
-import { TabsComponent } from './tabs/tabs.component';
+
 
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
@@ -13,18 +13,19 @@ import { HeroComponent } from './hero/hero.component';
 import { PageContainerComponent } from './page-container/page-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
 import { StatsComponent } from './stats/stats.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabsComponent,
     CardsComponent,
     FooterComponent,
     HeaderComponent,
     HeroComponent,
     PageContainerComponent,
     SectionContainerComponent,
-    StatsComponent
+    StatsComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,

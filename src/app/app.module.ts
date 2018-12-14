@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { NgBulmaLibModule } from 'ng-bulma-lib';
 import { BmTabModuleExport } from 'ng-bulma-lib';
 
-
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
+import { InfopackComponent } from './infopack/infopack.component';
 import { PageContainerComponent } from './page-container/page-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
 import { StatsComponent } from './stats/stats.component';
@@ -22,6 +22,7 @@ import { TabsComponent } from './tabs/tabs.component';
     FooterComponent,
     HeaderComponent,
     HeroComponent,
+    InfopackComponent,
     PageContainerComponent,
     SectionContainerComponent,
     StatsComponent,

@@ -1,0 +1,20 @@
+@import "../../styles";
+
+.is-main-hero {
+  background-image: url("../../assets/hero-background.png");
+  .info-wrapper {
+    max-width: 37.5rem;
+    margin-top: 5.625rem;
+    margin-left: 11.25rem;
+  }
+
+  .title {
+    font-size: 4.75rem;
+    letter-spacing: 0.0625px;
+    margin-bottom: 4.0625rem;
+  }
+
+  .subtitle {
+    margin-bottom: 3.625rem;
+  }
+}

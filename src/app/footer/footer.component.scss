@@ -1,0 +1,90 @@
+@import "../../styles.scss";
+
+.footer {
+  padding: 5.625rem;
+  width: 100%;
+  background-color: #0c2050;
+
+  .menu-item {
+    margin: 0 2.5rem 4.375rem 0;
+
+    a {
+      font-weight: 600;
+      padding: 0 1.25rem;
+      color: #2255ce;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #29c9ff;
+    }
+
+    a:first-child {
+      padding-left: 0;
+    }
+
+    a:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .social-links {
+    margin-bottom: 4.375rem;
+
+    a {
+      margin: 0 1rem;
+      color: $blue-soft;
+      font-size: 1.375rem;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: $blue-lighter;
+    }
+
+    a:first-child {
+      margin-left: 0;
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .info-box {
+    .text {
+      flex: 1 0 160px;
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.618em;
+        color: #fff;
+      }
+
+      span {
+        color: #7186b7;
+        font-size: 0.9375rem;
+        margin: 1rem 0;
+        display: block;
+      }
+    }
+
+    .contact {
+      .estimation-btn {
+        padding: 1.375rem 2.5rem;
+        height: 3.75rem;
+        line-height: 1;
+        margin-bottom: 1.875rem;
+      }
+
+      p {
+        color: #7186b7;
+      }
+
+      a {
+        color: $blue-lighter;
+      }
+    }
+  }
+}

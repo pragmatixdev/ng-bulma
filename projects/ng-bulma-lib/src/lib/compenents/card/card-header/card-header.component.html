@@ -1,0 +1,10 @@
+<header class="card-header">
+  <p class="card-header-title">
+    {{ title }}
+  </p>
+  <a href="#" *ngIf='isCollapsible' class="card-header-icon" aria-label="more options" (click)="toggle()">
+    <span class="icon">
+      <i class="fas fa-angle-down" aria-hidden="true"></i>
+    </span>
+  </a>
+</header>

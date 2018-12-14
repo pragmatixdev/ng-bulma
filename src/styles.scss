@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+$green: #5aad1f !default;
 $blue: #0f2762;
 $blue-soft: #2255ce;
 $blue-lighter: #29c9ff;
@@ -15,16 +16,19 @@ $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
   .button {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     height: auto;
+
     &.is-medium {
       font-size: 1rem;
       padding-top: calc(0.8125rem - #{$button-border-width});
       padding-bottom: calc(0.8125rem - #{$button-border-width});
     }
+
     &.is-rounded {
       border-radius: $radius-rounded;
       padding-left: $button-padding-horizontal;
       padding-right: $button-padding-horizontal;
     }
+
     &.is-primary {
       &:hover, &.is-hovered {
         background-color: darken($primary, 10%);
@@ -35,5 +39,6 @@ $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/base/helpers.sass";

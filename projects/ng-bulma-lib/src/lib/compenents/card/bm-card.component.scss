@@ -1,0 +1,21 @@
+::ng-deep {
+  .card-wrapper {
+    overflow: hidden;
+  }
+  .card {
+    transition: margin 0.2s ease-in-out;
+    &.is-opened {
+      margin-bottom: 1rem;
+    }
+    &.is-closed{
+      .card-header-icon {
+          transform: rotateX(0deg);
+      }
+    }
+    .card-header-icon {
+      transform: rotateX(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+

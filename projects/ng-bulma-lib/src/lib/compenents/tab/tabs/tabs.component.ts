@@ -11,7 +11,7 @@ import { BmTabComponent } from '../tab/tab.component';
 @Component({
   selector: 'bm-tabs',
   templateUrl: './tabs.component.html',
-  styles: ['.tabs a { transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out; }']
+  styleUrls: ['./tabs-component.scss']
 })
 
 export class BmTabsComponent implements AfterContentInit {

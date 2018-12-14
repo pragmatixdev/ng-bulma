@@ -14,6 +14,7 @@ import { PageContainerComponent } from './page-container/page-container.componen
 import { SectionContainerComponent } from './section-container/section-container.component';
 import { StatsComponent } from './stats/stats.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TabsComponent } from './tabs/tabs.component';
     PageContainerComponent,
     SectionContainerComponent,
     StatsComponent,
-    TabsComponent
+    TabsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

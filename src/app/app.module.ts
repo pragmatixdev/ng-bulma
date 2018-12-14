@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { PageContainerComponent } from './page-container/page-container.component';
 import { SectionContainerComponent } from './section-container/section-container.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SectionContainerComponent } from './section-container/section-container
     HeroComponent,
     PageContainerComponent,
     SectionContainerComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./section-container.component.scss']
 })
 export class SectionContainerComponent {
+  @Input() customClassName: string;
   @Input() title: string;
-  @Input() subtitle: string;
   @Input() greyBackground: boolean;
 }

@@ -1,0 +1,34 @@
+@import "../../../styles";
+
+::ng-deep {
+  .tabs-section .button {
+    margin-top: 40px;
+  }
+}
+
+.stages {
+  > div {
+    overflow: hidden;
+    &:not(:last-child) {
+      h6 {
+        position: relative;
+        &:after {
+          position: absolute;
+          width: 200%;
+          content: '';
+          height: 1px;
+          top: 50%;
+          border-bottom: dashed 1px #e0e5f0;
+          left: 120%;
+        }
+      }
+    }
+  }
+  .title-box {
+    align-items: center;
+    margin-bottom: 30px;
+    img {
+      margin-right: 15px;
+    }
+  }
+}

@@ -1,6 +1,8 @@
-<div class="content-container" [ngStyle]="{'background-color': greyBackground ? '#f7f9fd' : '#fff'}">
+<div class="content-container {{ customClassName }}" [ngStyle]="{'background-color': greyBackground ? '#f7f9fd' : '#fff'}">
   <h1 class="title is-2 has-text-centered is-marginless has-text-weight-bold">{{title}}</h1>
-  <p class="subtitle is-5 has-text-centered">{{subtitle}}</p>
+  <p class="subtitle is-5 has-text-centered">
+    <ng-content select="[subtitle]"></ng-content>
+  </p>
   <div class="content-box">
     <ng-content></ng-content>
   </div>

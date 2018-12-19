@@ -18,6 +18,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CareerComponent } from './pages/career/career.component';
+import { MenuComponent } from './header/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CareerComponent } from './pages/career/career.component';
     TabsComponent,
     AboutComponent,
     HomeComponent,
-    CareerComponent
+    CareerComponent,
+    MenuComponent
   ],
   imports: [
     AppRoutingModule,

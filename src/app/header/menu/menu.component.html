@@ -1,0 +1,14 @@
+<div class="mega-menu columns is-marginless">
+  <div class="categories-column">
+    <a href="" *ngFor="let category of categories, let i = index" (mouseover)="changeMenu($event, i)" class="category-item">
+      <img [src]="category.categoryIcon" alt="">
+      <span class="title is-6 has-text-weight-bold is-uppercase">{{category.categoryTitle}}</span>
+    </a>
+  </div>
+  <div class="column category-items is-paddingless">
+    <a *ngFor="let item of selectedCategory">
+      <img [src]="item.itemImage" alt="">
+      <span>{{item.itemName}}</span>
+    </a>
+  </div>
+</div>

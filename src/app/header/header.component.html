@@ -13,7 +13,10 @@
     <div id="navbarMenuHeroC" class="navbar-menu has-text-weight-semibold is-uppercase">
       <div class="navbar-end">
         <a routerLink="/about" class="navbar-item" >About</a>
-        <a class="navbar-item">Development</a>
+        <a class="navbar-item has-hover">
+          Development <i class="fas fa-caret-down"></i>
+          <app-menu></app-menu>
+        </a>
         <a routerLink="/career" class="navbar-item">Career</a>
         <a class="navbar-item">Blog</a>
       </div>

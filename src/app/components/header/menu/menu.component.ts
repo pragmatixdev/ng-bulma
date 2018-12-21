@@ -11,6 +11,7 @@ export class MenuComponent {
     {
       categoryTitle: 'web development',
       categoryIcon: 'https://coaxsoft.com/images/svg/technology/web_development.svg',
+      categoryLink: '/web-development',
       categoryItems: [
         {
           itemName: 'Ruby on Rails',
@@ -57,6 +58,7 @@ export class MenuComponent {
     {
       categoryTitle: 'mobile development',
       categoryIcon: 'https://coaxsoft.com/images/svg/technology/mobile_development.svg',
+      categoryLink: '/mobile-development',
       categoryItems: [
         {
           itemName: 'React Native',
@@ -67,6 +69,7 @@ export class MenuComponent {
     {
       categoryTitle: 'product design',
       categoryIcon: 'https://coaxsoft.com/images/svg/technology/product_design.svg',
+      categoryLink: '/product-design',
       categoryItems: [
         {
           itemName: 'Branding',

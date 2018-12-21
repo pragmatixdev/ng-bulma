@@ -1,7 +1,8 @@
-@import "../../styles.scss";
+@import "../../../styles";
 
 .control.has-button {
   width: 33.75rem;
+  margin: 0 auto;
 
   .infopack-input {
     height: 3.75rem;

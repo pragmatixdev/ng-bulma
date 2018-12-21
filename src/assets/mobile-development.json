@@ -1,0 +1,13 @@
+{
+  "title": "Mobile Development",
+  "imageSrc": "https://coaxsoft.com/images/svg/technology/mobile_development.svg",
+  "info": "Development of mobile applications (or simply mobile development) provides you with a modern and efficient tool for working not only with the customers, but also with the employees of your own company. Using such an application, you can easily manage both the company and the employees, because mobile apps allow giving instructions, following the news, viewing and sending documents, etc.",
+  "description": "<ul class=\"custom-list is-ordered\"><li><p><span class=\"is-dark has-text-weight-bold\">Preparation</span>You fill in the brief form, we define the business task of the project together, examine, and analyze similar competitive sites.</p></li><li><p><span class=\"is-dark has-text-weight-bold\">Discussion</span>The process involves not only designers, but also the leader that is leading the project. At this time, original ideas are generated and the structure, colors, usability, and many other things are worked out.</p></li><li><p><span class=\"is-dark has-text-weight-bold\">Model creation.</span>At this stage, it is decided where the main elements of the site will be located and how they will look.A comfortable and user-friendly navigation is also developed here. The result is several design variants.</p></li><li><p><span class=\"is-dark has-text-weight-bold\">Approval</span> Here you assess how the updated appearance of the Internet resource corresponds to the corporate spirit of the company. If necessary, some changes are made.</p></li></ul>",
+  "technologyItems": [
+    {
+      "itemName": "React Native",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/react.svg"
+    }
+  ]
+}
+

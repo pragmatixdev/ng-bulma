@@ -1,0 +1,49 @@
+{
+  "title": "Web Development",
+  "imageSrc": "https://coaxsoft.com/images/svg/technology/web_development.svg",
+  "info": "We know that right web solutions will deliver results for your business. We can help with wide range of services to any SME business & start ups. Whether you are only planning your first product or already is in progress to you IPO, we will help you. Our services are end-to-end - we help with consultancy, business analyses, design & development. Our main goal is your business success.",
+  "description": "<ul class=\"custom-list is-ordered\"><li><p>We dive into your business to understand all sides, got their beliefs, thoughts and feelings. Through this we identify opportunities to grow and enhance.</p></li><li><p>The heard of a good web product is right design. We never ignored the importance of usability.</p></li><li><p>Continuous delivery is the next step. We improve your business till you’re 100% satisfied.</p></li></ul>",
+  "technologyItems": [
+    {
+      "itemName": "Ruby on Rails",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/ruby_on_rails.svg"
+    },
+    {
+      "itemName": "Sinatra",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/sinatra.svg"
+    },
+    {
+      "itemName": "React.js",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/react.svg"
+    },
+    {
+      "itemName": "Python",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/python.svg"
+    },
+    {
+      "itemName": "Django",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/django.svg"
+    },
+    {
+      "itemName": "Angular",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/angular.svg"
+    },
+    {
+      "itemName": "Meteor.js",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/meteor.svg"
+    },
+    {
+      "itemName": "PostgreSQL",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/postgre_sql.svg"
+    },
+    {
+      "itemName": "MongoDB",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/mongo_db.svg"
+    },
+    {
+      "itemName": "AI",
+      "itemImage": "https://coaxsoft.com/images/svg/technology/web_development/ai.svg"
+    }
+  ]
+}
+

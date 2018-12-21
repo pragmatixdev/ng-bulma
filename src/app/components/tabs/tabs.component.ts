@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Tab } from '../interfaces/tab';
+import { Tab } from '../../interfaces/tab';
 
 @Component({
   selector: 'app-tabs',

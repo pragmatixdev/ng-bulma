@@ -1,4 +1,4 @@
-@import "../../../styles";
+@import "../../../../styles";
 
 .mega-menu {
   padding: 5rem;
@@ -18,7 +18,7 @@
 
 .categories-column {
   transform: translateX(-20px);
-  transition: transform  0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   display: block;
   width: 31.25rem;
   padding-right: 2.5rem;
@@ -53,9 +53,10 @@
   margin-left: 20px;
   margin-top: -20px;
   transform: translate(20px, 20px);
-  transition: transform  0.3s ease-in-out;
-
-  > a {
+  transition: transform 0.3s ease-in-out;
+}
+::ng-deep, :host {
+  .technology-item {
     @extend .has-text-centered;
     display: inline-block;
     cursor: pointer;

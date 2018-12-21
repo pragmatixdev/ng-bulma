@@ -1,0 +1,9 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul class="container">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngFor="let path of pathLocation, let i = index" [ngClass]="(pathLocation.length - 1 == i) && 'is-active'">
+      <i class="fas fa-angle-right"></i>
+      <a routerLink="/{{path}}" aria-current="page">{{ path.replace('-', ' ') }}</a>
+    </li>
+  </ul>
+</nav>

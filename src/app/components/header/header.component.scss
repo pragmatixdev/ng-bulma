@@ -1,4 +1,4 @@
-@import "../../styles";
+@import "../../../styles";
 
 .navbar {
   background-color: transparent;
@@ -10,7 +10,18 @@
     }
   }
   .container {
-    position: unset;
+    width: auto;
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 1px);
+    background-color: transparent;
+    content: '';
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
   &:hover, &.is-fixed {
@@ -23,13 +34,7 @@
     }
 
     &:before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: calc(100% - 1px);
       background-color: white;
-      content: '';
     }
 
     .button-box {

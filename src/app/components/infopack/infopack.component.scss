@@ -1,7 +1,14 @@
 @import "../../../styles";
 
+::ng-deep {
+  .content-container.is-infopack {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .control.has-button {
-  width: 33.75rem;
+  max-width: 33.75rem;
   margin: 0 auto;
 
   .infopack-input {

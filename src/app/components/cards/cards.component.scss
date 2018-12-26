@@ -5,8 +5,16 @@
   right: 0;
   top: 0;
   height: 100vh;
-  width: 338px;
-
+  width: 21.125rem;
+  @media screen and (max-width: $desktop) {
+    position: initial;
+    height: auto;
+    width: 100%;
+    display: flex;
+  }
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+  }
   &-item {
     @extend .is-flex, .has-text-centered;
     align-items: center;
@@ -14,7 +22,15 @@
     flex-direction: column;
     padding: 0 1.875rem;
     height: 33.33%;
-
+    @media screen and (max-width: $desktop) {
+      height: auto;
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 0 1.875rem 3.125rem;
+    }
+    @media screen and (max-width: $tablet) {
+      flex-basis: auto;
+    }
     &:first-child {
       background-color: lighten($blue, 25%);
     }
@@ -28,29 +44,40 @@
     }
 
     &:hover {
-      .button {
-        visibility: visible;
-        opacity: 1;
-      }
+      @media screen and (min-width: $desktop) {
+        .button {
+          visibility: visible;
+          opacity: 1;
+        }
 
-      .image {
-        margin-top: 0;
+        .image {
+          margin-top: 0;
+        }
       }
     }
 
     .image {
       margin-bottom: 1.875rem;
-      margin-top: 70px;
+      margin-top: 4.375rem;
       transition: margin 0.2s ease-in-out;
+      @media screen and (max-width: $desktop) {
+        margin-top: 3.125rem;
+      }
     }
 
     p {
       margin-bottom: 1.75rem;
+      @media screen and (max-width: $desktop) {
+        flex-grow: 1;
+      }
     }
 
     .button {
       opacity: 0;
       transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      @media screen and (max-width: $desktop) {
+        opacity: 1;
+      }
     }
   }
 }

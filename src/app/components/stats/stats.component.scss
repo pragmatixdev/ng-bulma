@@ -1,20 +1,55 @@
 @import "../../../styles";
 
+.stats-container {
+  > div:first-child {
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+    @media screen and (max-width: $tablet) {
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+    > div {
+      flex-basis: 50%;
+      display: flex;
+      margin-bottom: 1.875rem;
+      @media screen and (max-width: $tablet) {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
 .stat-number {
   color: $blue-soft;
-  margin: -0.625rem 1.5rem 1.875rem 0;
+  margin: -0.625rem 1.5rem 0 0;
   display: inline-block;
   line-height: normal;
-  vertical-align: top;
-  width: 3.75rem;
   text-align: center;
+  flex-basis: 3.75rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @media screen and (max-width: $tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+.stat-text {
+  @media screen and (max-width: $tablet) {
+    font-size: 1.75rem;
+  }
 }
 
 .upwork-columns {
   margin: 3.75rem 0;
   justify-content: center;
   align-items: flex-end;
-
+  @media screen and (max-width: $tablet) {
+    margin: 3.75rem auto 0;
+    max-width: 27.5rem;
+    text-align: center;
+  }
   > div {
     flex: 0 0 21.25rem;
     padding: 0 3.125rem;
@@ -42,10 +77,13 @@
     line-height: 1.875rem;
   }
 }
+
 .is-right-column {
   ul {
     list-style: none;
-
+    @media screen and (max-width: $tablet) {
+      margin-top: 3.125rem !important;
+    }
     li {
       display: flex;
       justify-content: space-between;

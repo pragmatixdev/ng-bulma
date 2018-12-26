@@ -17,10 +17,20 @@ $tab-bg-hover: #f7f9fd;
       border-bottom-width: 3px;
       border-bottom-color: $tab-border-color;
       padding: 1.875rem 1.25rem;
-
       &:hover {
         border-bottom-color: $tab-border-color;
         background-color: $tab-bg-hover;
+      }
+      p {
+        @media screen and (max-width: $tablet) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 1rem;
+        img {
+          width: 3.125rem;
+        }
       }
     }
     p {
@@ -32,6 +42,9 @@ $tab-bg-hover: #f7f9fd;
   .content-wrapper {
     box-shadow: 0 0.125rem 1.875rem 0 $tab-border-color;
     padding: 3.75rem 3.75rem 3.75rem 0;
+    @media screen and (max-width: $tablet) {
+      padding: 1rem 1rem 3rem;
+    }
     > div {
       position: relative;
     }
@@ -44,7 +57,7 @@ $tab-bg-hover: #f7f9fd;
       height: 100%;
       width: 100%;
     }
-    .main-image{
+    .main-image {
       max-width: 120px;
       width: 100%;
       position: absolute;

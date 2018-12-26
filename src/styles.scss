@@ -16,6 +16,9 @@ $button-border-width: 0.125rem;
 $radius-rounded: 3.125rem;
 $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
 
+$mobile-breakpoint: 40rem; // 640px
+$tablet-breakpoint: 64rem; // 1024px
+
 ::ng-deep, :host {
   .button {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;

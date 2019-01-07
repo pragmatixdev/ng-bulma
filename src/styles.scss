@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+$light-grey: #e0e5f0;
 $green: #5aad1f !default;
 $blue: #0f2762;
 $blue-soft: #2255ce;
 $blue-lighter: #29c9ff;
 $primary: $blue-lighter;
-$link: $blue;
+$text: #626c84;
+$dark-text: #252a37;
+$body-color: $text;
+$link: $blue-soft;
 $link-hover: $primary;
 $button-color: $primary;
 $button-padding-horizontal: 2.25rem;
@@ -12,7 +16,10 @@ $button-border-width: 0.125rem;
 $radius-rounded: 3.125rem;
 $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
 
-:host {
+$mobile-breakpoint: 40rem; // 640px
+$tablet-breakpoint: 64rem; // 1024px
+
+::ng-deep, :host {
   .button {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     height: auto;
@@ -35,9 +42,20 @@ $button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
       }
     }
   }
+  .is-dark {
+    color: $dark-text;
+  }
+  .is-size-5 {
+    font-size: 1.125rem !important;
+  }
+  .has-gray-background {
+    background-color: #f7f9fd;
+  }
 }
 
+
 @import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/generic.sass";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";

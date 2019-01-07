@@ -1,0 +1,9 @@
+<section class="{{!isFloatingHeader && 'has-fixed-header'}}">
+  <app-header [isFloatingHeader]="isFloatingHeader"></app-header>
+</section>
+
+<ng-content></ng-content>
+
+<section>
+  <app-footer></app-footer>
+</section>

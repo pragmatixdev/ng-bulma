@@ -1,0 +1,19 @@
+<div class="mega-menu columns is-marginless">
+  <div class="categories-column">
+    <a href=""
+       *ngFor="let category of categories, let i = index"
+       (mouseover)="changeMenu($event, i)"
+       class="category-item"
+       [routerLink]="category.categoryLink"
+    >
+      <img [src]="category.categoryIcon" alt="">
+      <span class="title is-6 has-text-weight-bold is-uppercase">{{category.categoryTitle}}</span>
+    </a>
+  </div>
+  <div class="column category-items is-paddingless">
+    <a *ngFor="let item of selectedCategory" class="technology-item">
+      <img [src]="item.itemImage" alt="">
+      <span>{{item.itemName}}</span>
+    </a>
+  </div>
+</div>

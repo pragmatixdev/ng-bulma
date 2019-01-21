@@ -7,6 +7,8 @@ import { ComponentsModule } from '../components/components.module';
 import { DevelopmentTypesComponent } from './development/development.component';
 import { HomeComponent } from './home/home.component';
 
+import { BmCarouselModuleExport } from 'ng-bulma-lib';
+
 @NgModule({
   declarations: [
     AboutComponent,
@@ -23,7 +25,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    BmCarouselModuleExport
   ]
 })
 export class PagesModule {

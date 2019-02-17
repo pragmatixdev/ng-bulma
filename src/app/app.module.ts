@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
+import { BmModalModuleExport } from 'ng-bulma-lib';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     AppRoutingModule,
     ComponentsModule,
-    PagesModule
+    PagesModule,
+    BmModalModuleExport
   ],
   bootstrap: [AppComponent]
 })

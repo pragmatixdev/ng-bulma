@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { Tab } from '../../interfaces/tab';
-import { CarouselConfig } from '../../../../projects/ng-bulma-lib/src/lib/compenents/carousel/carousel-config';
 
 @Component({
   selector: 'app-home',
@@ -43,9 +41,4 @@ export class HomeComponent {
         'competitors.'
     }
   ];
-
-  config: CarouselConfig = {
-    itemsToScroll: 2,
-    itemsToShow: 2
-  };
 }

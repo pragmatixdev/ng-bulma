@@ -31,7 +31,7 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
   autoPlayInterval: any;
 
   get isLastSlide() {
-    return Math.abs(this.slidingWidth) >= (this.carouselContentWidth - (this.itemContainerWidth * this.config.itemsToShow))
+    return Math.abs(this.slidingWidth) >= (this.carouselContentWidth - (this.itemContainerWidth * this.config.itemsToShow));
   }
 
   constructor() {}
@@ -68,18 +68,11 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
       clearInterval(this.autoPlayInterval);
       this.autoPlayFunction();
     }
-    const itemsScrolled = Math.abs((Math.abs(this.slidingWidth) / this.itemContainerWidth));
-    let itemsToScroll: number;
-    if (itemsScrolled === 0) {
-      itemsToScroll = this.config.itemsToShow;
-    } else {
-      itemsToScroll = itemsScrolled <= this.config.itemsToScroll ? itemsScrolled : this.config.itemsToScroll;
-    }
 
     if (this.slidingWidth === 0 && this.config.infinite === true) {
-      this.slidingWidth = -(this.carouselContentWidth - (this.itemContainerWidth * itemsToScroll));
+      this.slidingWidth = -(this.carouselContentWidth - (this.itemContainerWidth * this.getItemsToScroll('previous')));
     } else {
-      this.slidingWidth += (this.itemContainerWidth * itemsToScroll);
+      this.slidingWidth += (this.itemContainerWidth * this.getItemsToScroll('previous'));
       this.isPrevBtnDisabled = this.slidingWidth === 0 && this.config.infinite === false;
     }
   }
@@ -94,14 +87,10 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
       this.autoPlayFunction();
     }
 
-    const itemsScrolled = (Math.abs(this.slidingWidth) / this.itemContainerWidth) + this.config.itemsToShow;
-    const itemsLeftToBeScrolled = this.items.length - itemsScrolled;
-    const itemsToScroll = itemsLeftToBeScrolled >= this.config.itemsToScroll ? this.config.itemsToScroll : itemsLeftToBeScrolled;
-
     if (this.isLastSlide && this.config.infinite === true) {
       this.slidingWidth = 0;
     } else {
-      this.slidingWidth -= (this.itemContainerWidth * itemsToScroll);
+      this.slidingWidth -= (this.itemContainerWidth * this.getItemsToScroll('next'));
       this.isNextBtnDisabled = this.isLastSlide && this.config.infinite === false;
     }
   }
@@ -118,14 +107,31 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
     });
   }
 
+  getItemsToScroll(state) {
+    let itemsToScroll: number;
+    if (state === 'next') {
+      const itemsScrolled = (Math.abs(this.slidingWidth) / this.itemContainerWidth) + this.config.itemsToShow;
+      const itemsLeftToBeScrolled = this.items.length - itemsScrolled;
+      itemsToScroll = itemsLeftToBeScrolled >= this.config.itemsToScroll ? this.config.itemsToScroll : itemsLeftToBeScrolled;
+    } else if (state === 'previous') {
+      const itemsScrolled = Math.abs((Math.abs(this.slidingWidth) / this.itemContainerWidth));
+      if (itemsScrolled === 0) {
+        itemsToScroll = this.config.itemsToShow;
+      } else {
+        itemsToScroll = itemsScrolled <= this.config.itemsToScroll ? itemsScrolled : this.config.itemsToScroll;
+      }
+    }
+    return itemsToScroll;
+  }
+
   private getDefaultConfigs(): CarouselConfig {
     return {
       hasNavigation: true,
       navigationSpeed: 1000,
       itemsToShow: 1,
       itemsToScroll: 1,
-      infinite: false,
-      autoPlay: false,
+      infinite: true,
+      autoPlay: true,
       autoPlaySpeed: 5000
     };
   }

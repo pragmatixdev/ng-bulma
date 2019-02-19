@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalRef } from '../modal-ref';
 
 @Component({
   selector: 'bm-modal-card-header',
@@ -7,8 +8,14 @@ import { Component } from '@angular/core';
       <p class="modal-card-title">
         <ng-content></ng-content>
       </p>
-      <button class="delete" aria-label="close"></button>
+      <button class="delete" aria-label="close" (click)="close('cross-click')"></button>
     </header>
   `
 })
-export class ModalCardHeaderComponent {}
+export class ModalCardHeaderComponent {
+  constructor( private modalRef: ModalRef ) {}
+
+  close(state: any) {
+    this.modalRef.close(state);
+  }
+}

@@ -15,7 +15,7 @@ import { ModalRef } from '../modal-ref';
         sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
       <bm-modal-card-footer modal-card-footer>
-        <button class="button is-success">Save changes</button>
+        <button class="button is-success" (click)="close('saved')">Save changes</button>
         <button class="button" (click)="close()">close</button>
       </bm-modal-card-footer>
     </bm-modal-card>
@@ -24,12 +24,10 @@ import { ModalRef } from '../modal-ref';
 
 export class ExampleModalComponent {
   constructor(public modalRef: ModalRef,
-              @Inject(MODAL_DATA) public data: any) {
-    console.log(data);
-  }
+              @Inject(MODAL_DATA) public data: any) {}
 
-  close() {
-    this.modalRef.close();
+  close(result?: any) {
+    this.modalRef.close(result);
   }
 
 }

@@ -26,7 +26,7 @@ export class BmModal {
     private overlay: Overlay
   ) {}
 
-  open<T, D = any, R = any>(componentOrTemplateRef: ComponentType<T>, config: ModalConfig = {}) {
+  open<T, D = any, R = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config: ModalConfig = {}) {
     // Override default configuration
     const dialogConfig = { ...DEFAULT_CONFIG, ...config };
 
@@ -70,8 +70,7 @@ export class BmModal {
 
     // Create a reference to the dialog we're creating in order to give the user a handle
     // to modify and close it.
-    const dialogRef =
-      new ModalRef(overlayRef);
+    const dialogRef = new ModalRef(overlayRef);
 
     // When the dialog backdrop is clicked, we want to close it.
     if (config.hasBackdrop) {
@@ -115,6 +114,4 @@ export class BmModal {
 
     return containerRef.instance;
   }
-
-
 }

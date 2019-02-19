@@ -11,9 +11,7 @@ import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal } fr
   selector: 'bm-modal-container',
   changeDetection: ChangeDetectionStrategy.Default,
   template: `
-    <div class="modal is-active">
-      <ng-template cdkPortalOutlet></ng-template>
-    </div>
+    <ng-template cdkPortalOutlet></ng-template>
   `
 })
 

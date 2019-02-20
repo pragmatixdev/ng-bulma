@@ -1,0 +1,29 @@
+<div class="carousel">
+  <div class="carousel-wrapper" #carouselWrapper>
+    <div class="carousel-content"
+         #carouselContent
+         [style.width.px]="carouselContentWidth">
+      <div class="carousel-item has-background"
+           [style.transition]="'all ' + config.navigationSpeed + 'ms ease 0s'"
+           [style.transform]="'translate3d('+ slidingWidth + 'px, 0px, 0px)'"
+           [style.width.px]="carouselContentWidth">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-navigation" *ngIf="config.hasNavigation">
+    <div class="wrapper">
+      <div class="carousel-nav-buttons left-btn">
+        <button (click)="prevSlide()" [disabled]="isPrevBtnDisabled">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="carousel-nav-buttons right-btn">
+        <button (click)="nextSlide()" [disabled]="isNextBtnDisabled">
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

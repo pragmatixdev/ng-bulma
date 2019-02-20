@@ -110,7 +110,7 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
     });
   }
 
-  getItemsToScroll(state) {
+  private getItemsToScroll(state) {
     let itemsToScroll: number;
     if (state === 'next') {
       const itemsScrolled = (Math.abs(this.slidingWidth) / this.itemContainerWidth) + this.config.itemsToShow;

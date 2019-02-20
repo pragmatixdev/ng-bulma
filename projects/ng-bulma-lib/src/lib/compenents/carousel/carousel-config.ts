@@ -6,6 +6,7 @@ export interface CarouselConfig {
   infinite?: boolean;
   autoPlay?: boolean;
   autoPlaySpeed?: number;
+  itemPadding?: number;
   pauseOnHover?: boolean; // TBD
   pauseOnNavigation?: boolean; // TBD
   hasDots?: boolean; // TBD

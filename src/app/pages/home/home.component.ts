@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Tab } from '../../interfaces/tab';
 
 @Component({

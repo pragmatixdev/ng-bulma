@@ -4,10 +4,13 @@ import {
   Component,
   ContentChildren,
   ElementRef,
+  Input,
   OnInit,
   QueryList,
-  ViewChild } from '@angular/core';
+  ViewChild
+} from '@angular/core';
 import { BmCarouselItemComponent } from '../carousel-item/bm-carousel-item.component';
+import { CarouselConfig } from '../carousel-config';
 
 @Component({
   selector: 'bm-carousel',
@@ -19,6 +22,7 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
   @ViewChild('carouselWrapper') carouselWrapper: ElementRef;
   @ViewChild('carouselContent') carouselContent: ElementRef;
   @ContentChildren(BmCarouselItemComponent) items: QueryList<BmCarouselItemComponent>;
+  @Input() config: CarouselConfig;
   carouselContentWidth: number = 0;
   slidingWidth: number = 0;
   isNextBtnDisabled: boolean = false;
@@ -26,83 +30,114 @@ export class BmCarouselComponent implements OnInit, AfterContentInit, AfterViewI
   itemContainerWidth: any;
   autoPlayInterval: any;
 
-  hasNavigation: boolean = true;
-  navSpeed: number = 1000;
-  numberOfItems: any = 1;
-  loop: boolean = true;
-  autoPlay: boolean = false;
-  speed: number = 5000;
+  ngOnInit() {
+    const defaultConfig = this.getDefaultConfigs();
+    this.config = {...defaultConfig, ...this.config};
+    this.itemContainerWidth = Math.ceil(this.carouselWrapper.nativeElement.offsetWidth / this.config.itemsToShow);
+    this.isPrevBtnDisabled = !this.config.infinite;
 
-  constructor() {}
+    if (this.config.itemsToShow < this.config.itemsToScroll) {
+      this.config.itemsToScroll = this.config.itemsToShow;
+    }
+
+    if (this.config.autoPlay === true) {
+      this.startAutoPlay();
+    }
+  }
 
   ngAfterContentInit() {
     if (this.itemContainerWidth) {
-      this.items.toArray().forEach(item => item.itemContainerWidth = this.itemContainerWidth);
+      this.items.toArray().forEach(item => {
+        item.itemContainerWidth = this.itemContainerWidth;
+        item.itemPadding = this.config.itemPadding;
+      });
     }
   }
 
   ngAfterViewInit() {
-    this.checkInnerContainerWidth();
+    this.setInnerContainerWidth();
   }
 
-  ngOnInit() {
-    this.itemContainerWidth = Math.ceil(this.carouselWrapper.nativeElement.offsetWidth / this.numberOfItems);
-    if (this.slidingWidth === 0 && this.loop === false) {
-      this.isPrevBtnDisabled = true;
-    }
-    if (this.autoPlay === true) {
-      this.autoPlayFunction();
-    }
+  get isLastSlide() {
+    return Math.abs(this.slidingWidth) >= (this.carouselContentWidth - (this.itemContainerWidth * this.config.itemsToShow));
   }
 
   prevSlide() {
-    if (this.loop === false) {
+    if (this.config.infinite === false) {
       this.isNextBtnDisabled = false;
     }
-    if (this.autoPlay === true) {
-      clearInterval(this.autoPlayInterval);
-      this.autoPlayFunction();
-    }
-    if (this.slidingWidth === 0 && this.loop === true) {
-      this.slidingWidth = -(this.carouselContentWidth - this.itemContainerWidth);
-    } else if (this.slidingWidth === 0 && this.loop === false) {
-      this.isPrevBtnDisabled = true;
-    } else {
-      this.slidingWidth += this.itemContainerWidth;
 
-      this.isPrevBtnDisabled = false;
+    if (this.config.autoPlay === true) {
+      clearInterval(this.autoPlayInterval);
+      this.startAutoPlay();
+    }
+
+    if (this.slidingWidth === 0 && this.config.infinite === true) {
+      this.slidingWidth = -(this.carouselContentWidth - (this.itemContainerWidth * this.getItemsToScroll('previous')));
+    } else {
+      this.slidingWidth += (this.itemContainerWidth * this.getItemsToScroll('previous'));
+      this.isPrevBtnDisabled = this.slidingWidth === 0 && this.config.infinite === false;
     }
   }
 
   nextSlide() {
-    if (this.loop === false) {
+    if (this.config.infinite === false) {
       this.isPrevBtnDisabled = false;
     }
-    if (this.autoPlay === true) {
+
+    if (this.config.autoPlay === true) {
       clearInterval(this.autoPlayInterval);
-      this.autoPlayFunction();
+      this.startAutoPlay();
     }
-    const isLastSlide = Math.abs(this.slidingWidth) === (this.carouselContentWidth - this.itemContainerWidth * this.numberOfItems);
-    if (isLastSlide && this.loop === true) {
+
+    if (this.isLastSlide && this.config.infinite === true) {
       this.slidingWidth = 0;
-    } else if (isLastSlide && this.loop === false) {
-      this.isNextBtnDisabled = true;
-    }  else {
-      this.slidingWidth -= (this.itemContainerWidth);
-      this.isNextBtnDisabled = false;
+    } else {
+      this.slidingWidth -= (this.itemContainerWidth * this.getItemsToScroll('next'));
+      this.isNextBtnDisabled = this.isLastSlide && this.config.infinite === false;
     }
   }
 
-  autoPlayFunction() {
+  startAutoPlay() {
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, this.speed);
+    }, this.config.autoPlaySpeed);
   }
 
-  checkInnerContainerWidth() {
-    this.carouselContent.nativeElement.childNodes[0].childNodes.forEach( resp => {
+  private setInnerContainerWidth() {
+    this.carouselContent.nativeElement.childNodes[0].childNodes.forEach(resp => {
       this.carouselContentWidth += resp.childNodes[0].offsetWidth;
     });
+  }
+
+  private getItemsToScroll(state) {
+    let itemsToScroll: number;
+    if (state === 'next') {
+      const itemsScrolled = (Math.abs(this.slidingWidth) / this.itemContainerWidth) + this.config.itemsToShow;
+      const itemsLeftToBeScrolled = this.items.length - itemsScrolled;
+      itemsToScroll = itemsLeftToBeScrolled >= this.config.itemsToScroll ? this.config.itemsToScroll : itemsLeftToBeScrolled;
+    } else if (state === 'previous') {
+      const itemsScrolled = Math.abs((Math.abs(this.slidingWidth) / this.itemContainerWidth));
+      if (itemsScrolled === 0) {
+        itemsToScroll = this.config.itemsToShow;
+      } else {
+        itemsToScroll = itemsScrolled <= this.config.itemsToScroll ? itemsScrolled : this.config.itemsToScroll;
+      }
+    }
+    return itemsToScroll;
+  }
+
+  private getDefaultConfigs(): CarouselConfig {
+    return {
+      hasNavigation: true,
+      navigationSpeed: 1000,
+      itemsToShow: 1,
+      itemsToScroll: 1,
+      infinite: true,
+      autoPlay: true,
+      autoPlaySpeed: 5000,
+      itemPadding: 7
+    };
   }
 }
 

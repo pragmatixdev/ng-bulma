@@ -8,14 +8,14 @@ import { ModalRef } from '../modal-ref';
       <p class="modal-card-title">
         <ng-content></ng-content>
       </p>
-      <button class="delete" aria-label="close" (click)="close('cross-click')"></button>
+      <button class="close" aria-label="close" (click)="close('cross-click')"></button>
     </header>
   `
 })
 export class ModalCardHeaderComponent {
   constructor( private modalRef: ModalRef ) {}
 
-  close(state: any) {
+  close(state: string) {
     this.modalRef.close(state);
   }
 }

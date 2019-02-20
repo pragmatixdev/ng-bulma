@@ -1,11 +1,11 @@
 import { ApplicationRef, ComponentFactoryResolver, Injectable, Injector, TemplateRef } from '@angular/core';
-import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector, TemplatePortal } from '@angular/cdk/portal';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ModalContainerComponent } from './modal-container.component';
 import { ComponentType } from '@angular/cdk/typings/portal';
-import { ModalRef } from './modal-ref';
-import { MODAL_DATA } from './modal.tokens';
 import { ModalConfig } from './mdoal-config';
+import { MODAL_DATA } from './modal.tokens';
+import { ModalRef } from './modal-ref';
 
 const DEFAULT_CONFIG: ModalConfig = {
   hasBackdrop: true,

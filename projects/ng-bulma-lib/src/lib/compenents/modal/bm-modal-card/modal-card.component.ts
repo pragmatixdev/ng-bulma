@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'bm-modal-card',
@@ -12,10 +12,4 @@ import { Component, OnInit } from '@angular/core';
     </div>
   `
 })
-export class ModalCardComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() {  }
-
-
-}
+export class ModalCardComponent {}

@@ -1,6 +1,8 @@
 import { ViewContainerRef } from '@angular/core';
 
-export class Data {}
+export class Data {
+  [key: string]: any
+}
 
 export class ModalConfig {
   panelClass?: string;

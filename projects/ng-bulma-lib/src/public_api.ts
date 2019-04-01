@@ -3,6 +3,6 @@
  */
 
 export * from './lib/compenents/tab/tab-export.module';
+export * from './lib/compenents/input/input-export.module';
 export * from './lib/ng-bulma-lib.module';
-
 

@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AppRoutingModule,
     CoreModule,
     PagesModule,
-    BrowserModule
+    BrowserModule,
   ],
   bootstrap: [AppComponent]
 })
